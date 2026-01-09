@@ -1,0 +1,23 @@
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:#111;margin:0;background:#f6f8fb}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:#fff;border-bottom:1px solid #e6e9ef}
+h1{font-size:18px;margin:0}
+.controls{display:flex;gap:8px;align-items:center}
+main{display:flex;gap:12px;padding:12px}
+.camera{flex:1}
+.video-wrap{position:relative;background:#000;border-radius:8px;overflow:hidden}
+video,canvas{width:100%;height:auto;display:block}
+canvas{position:absolute;left:0;top:0}
+.overlay{position:absolute;left:0;top:0;pointer-events:none}
+.sidebar{width:320px;background:#fff;border-radius:8px;padding:12px;border:1px solid #e6e9ef;height:calc(100vh - 96px);overflow:auto}
+.effect-item{display:flex;flex-direction:column;padding:6px;border-bottom:1px dashed #eee}
+.effect-item .left{display:flex;gap:8px;align-items:center}
+.effect-item .right{margin-left:auto}
+.params{margin-top:6px}
+button{cursor:pointer}
+.slim-info{font-size:12px;color:#666;padding:6px}
+.hidden{display:none}
+#overlay .handle{position:absolute;width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,0.9);border:2px solid #333;transform:translate(-50%,-50%);pointer-events:auto}
+#overlay .label{position:absolute;background:rgba(0,0,0,0.6);color:#fff;padding:2px 6px;border-radius:4px;font-size:12px;transform:translate(-50%,-120%)}
+
+/* small responsive */
+@media(max-width:900px){.sidebar{display:none}}
