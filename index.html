@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photobooth Filters</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Photobooth Filters</h1>
+    <div class="controls">
+      <label><input id="faceLock" type="checkbox"> Lock effects to face</label>
+      <button id="captureBtn">Capture</button>
+      <button id="downloadMetaBtn">Download metadata</button>
+      <button id="togglePresets">Presets</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="camera">
+      <div class="video-wrap">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="output"></canvas>
+        <div id="overlay" class="overlay"></div>
+      </div>
+      <div class="slim-info">Tip: Allow camera access. Drag effect icons to move their centers. Use face-lock to auto-position on face.</div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Effects (click to toggle)</h2>
+      <ul id="effectsList"></ul>
+      <h3>Order</h3>
+      <div id="orderHelp">Use up/down on each effect to change order</div>
+      <hr />
+      <div id="presets" class="hidden">
+        <button data-preset="retro">Retro</button>
+        <button data-preset="party">Party</button>
+        <button data-preset="mono">Monochrome</button>
+      </div>
+    </aside>
+  </main>
+
+  <template id="effectItemTpl">
+    <li class="effect-item">
+      <div class="left">
+        <input type="checkbox" class="effect-toggle" />
+        <span class="effect-name"></span>
+      </div>
+      <div class="right">
+        <button class="up">▲</button>
+        <button class="down">▼</button>
+        <button class="drag">✦</button>
+      </div>
+      <div class="params"></div>
+    </li>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core@4.9.0/dist/tf-core.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl@4.9.0/dist/tf-backend-webgl.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@2.0.0/dist/face-landmarks-detection.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
